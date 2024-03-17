@@ -1,6 +1,6 @@
 package hu.webler.domain;
 
-public class ExtraActivity {
+public interface ExtraActivity {
 
-    void
+    void extraSomething();
 }

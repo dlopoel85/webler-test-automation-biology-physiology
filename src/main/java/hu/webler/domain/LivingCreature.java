@@ -1,17 +1,16 @@
 package hu.webler.domain;
 
+import java.util.Arrays;
+
 public abstract class LivingCreature {
 
-    public static int creatureCounter;
-
+    private static int creatureCounter;
     private String name;
-
     private int age;
-
     private String[] colors;
 
     public LivingCreature() {
-this("name:", )
+        this("", 0, null);
     }
 
     public LivingCreature(String name, int age, String[] colors) {
@@ -19,10 +18,11 @@ this("name:", )
         this.name = name;
         this.age = age;
         this.colors = colors;
-
     }
 
-    abstract void feed();
+    // ez lehetne String. most egyszerű kiiratás miatt adtam neki void-ot!
+    // abstract String feed(); -> tipus igényfüggő :)
+    public abstract void feed();
 
     public String getName() {
         return name;
@@ -37,7 +37,7 @@ this("name:", )
     }
 
     public void setAge(int age) {
-        this.age =age;
+        this.age = age;
     }
 
     public String[] getColors() {
@@ -46,5 +46,22 @@ this("name:", )
 
     public void setColors(String[] colors) {
         this.colors = colors;
+    }
+
+    public static int getCreatureCounter() {
+        return creatureCounter;
+    }
+
+    public static void setCreatureCounter(int num) {
+        creatureCounter = num;
+    }
+
+    @Override
+    public String toString() {
+        return "LivingCreature{" +
+                "name='" + name + '\'' +
+                ", age='" + age + '\'' +
+                ", colors='" + Arrays.toString(this.getColors()) + '\'' +
+                '}';
     }
 }

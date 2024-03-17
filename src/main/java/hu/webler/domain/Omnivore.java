@@ -1,5 +1,7 @@
 package hu.webler.domain;
 
+import java.util.Arrays;
+
 public class Omnivore extends Animal {
 
     public Omnivore() {
@@ -20,7 +22,7 @@ public class Omnivore extends Animal {
         return "Omnivore{" +
                 "name" + super.getName() +
                 "ages" + super.getAge() +
-                "colors" + Array.toString(this.getColors()) +
+                "colors" + Arrays.toString(this.getColors()) +
                 "gender" + super.getGender();
 
     }
